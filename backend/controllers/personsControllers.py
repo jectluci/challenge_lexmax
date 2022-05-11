@@ -4,6 +4,11 @@ from flask.views import MethodView
 from flask import request
 
 
+class PageHome(MethodView):
+    def get(self):
+        return jsonify({"/persona": "get, post", "/person/id": "get, put, delete"})
+
+
 class PersonswithOutParameters(MethodView):
     def get(self):
         persons = Persona.query.all()
